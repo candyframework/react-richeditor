@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "module": "CommonJs",
+        "target": "ES5",
+        "moduleResolution": "Node",
+        "sourceMap": false,
+        "allowJs": true,
+        "jsx": "react",
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true,
+        "outDir": "./dist"
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
