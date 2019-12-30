@@ -1,3 +1,34 @@
+/**
+ * component
+ */
+.dy-editor-tab-wrapper {
+    background-color: #f4f4f4;
+}
+.dy-editor-tab-item {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.dy-editor-tab-item.active {
+    background-color: #fff;
+}
+
+/**
+ * imgs
+ */
+.dy-editor-triangle {
+    position: absolute;
+    display: block;
+    width: 21px;
+    height: 11px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAALCAYAAAAjg+5nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMdJREFUeNrMlssNxCAMBWHvFABt0ACdQwOUARRAAawcKRLkt2Assj5x8psxSRxeSmE9FWMsSinOCMs5t4ULIZjWGt3He89yztvZGPPIyHuEQXY/U0rXfVNKKGmQlVKyXr5PLxQAHSEpC6ABfka2px5vuJaF6dcB1I/3MWtEdoTlVvgO4B+kZxguhX8Fvyk9m30SXjFlrDRFZiO86j3CSFNl8RBCc8Wj6+HqS0klX0tTDbYRXrULsbuaoi+31i7/28FIUw3xK8AAb7fRai8N7gIAAAAASUVORK5CYII=);
+}
+
 .dy-editor-icon {
     display: inline-block;
     width: 30px;
@@ -15,6 +46,9 @@
 .dy-editor-icon:hover {
     background-color: #ddd;
 }
+.dy-editor-icon-italic {
+    background-position: 10px -110px;
+}
 .dy-editor-icon-bold {
     background-position: 10px 8px;
 }
@@ -24,19 +58,14 @@
 .dy-editor-icon-blockquote {
     background-position: 7px -82px;
 }
-
-
-.dy-editor-triangle {
-    position: absolute;
-    display: block;
-    width: 21px;
-    height: 11px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAALCAYAAAAjg+5nAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMdJREFUeNrMlssNxCAMBWHvFABt0ACdQwOUARRAAawcKRLkt2Assj5x8psxSRxeSmE9FWMsSinOCMs5t4ULIZjWGt3He89yztvZGPPIyHuEQXY/U0rXfVNKKGmQlVKyXr5PLxQAHSEpC6ABfka2px5vuJaF6dcB1I/3MWtEdoTlVvgO4B+kZxguhX8Fvyk9m30SXjFlrDRFZiO86j3CSFNl8RBCc8Wj6+HqS0klX0tTDbYRXrULsbuaoi+31i7/28FIUw3xK8AAb7fRai8N7gIAAAAASUVORK5CYII=);
+.dy-editor-icon-emotion {
+    background-position: 5px -25px;
 }
 
 
+/**
+ * main
+ */
 .dy-editor-wrapper {
     border: 1px solid #ddd;
 }
@@ -108,4 +137,61 @@
 }
 
 
-/* blockquote */
+/* emotion */
+.dy-editor-emotion-wrapper {
+    display: inline-block;
+    position: relative;
+}
+.dy-editor-emotion-dialog {
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    left: 0;
+    width: 410px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 0 6px #dcdcdc;
+}
+.dy-editor-emotion-dialog-triangle {
+    top: -11px;
+    left: 8px;
+}
+.dy-editor-emotion-dialog-content {
+    height: 160px;
+    margin: 0 10px 0 10px;
+    padding-top: 15px;
+    overflow-y: auto;
+}
+.dy-editor-emotion-dialog-content::-webkit-scrollbar {
+    width: 6px;
+}
+.dy-editor-emotion-dialog-content::-webkit-scrollbar-thumb {
+    background-color: #EAE9E9;
+    border-radius: 2px;
+}
+.dy-editor-emotion-dialog-textitem {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 28px;
+    padding: 0 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.dy-editor-emotion-dialog-textitem:hover,
+.dy-editor-emotion-dialog-imageitem:hover {
+    background-color: #f4f4f4;
+}
+.dy-editor-emotion-dialog-imageitem {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.dy-editor-emotion-dialog-imageitem img {
+    width: 30px;
+    height: 30px;
+}

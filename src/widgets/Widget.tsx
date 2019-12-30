@@ -10,25 +10,25 @@ export default abstract class Widget extends React.Component<WidgetProps, any> i
     constructor(props: WidgetProps) {
         super(props);
 
-        props.editor.event.on('selectionchange', this.beforeStatusReflect, this);
+        props.editor.event.on('selectionchange', this.beforeSelectionChange, this);
     }
 
     /**
      * @inheritdoc
      */
-    public beforeStatusReflect(): void {
+    public beforeSelectionChange(): void {
         // todo
-        this.statusReflect();
-        this.afterStatusReflect();
+        this.selectionChange();
+        this.afterSelectionChange();
     }
 
     /**
      * @inheritdoc
      */
-    public abstract statusReflect(): void;
+    public abstract selectionChange(): void;
 
     /**
      * @inheritdoc
      */
-    public afterStatusReflect(): void {}
+    public afterSelectionChange(): void {}
 }

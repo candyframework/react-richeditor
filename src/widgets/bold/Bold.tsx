@@ -15,7 +15,7 @@ export default class Bold extends Widget {
     /**
      * @inheritdoc
      */
-    public statusReflect() {
+    public selectionChange() {
         const ret = Editable.queryCommandState('bold');
 
         if(true === ret) {

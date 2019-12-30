@@ -10,7 +10,7 @@ export default class Paragraph extends Widget {
     /**
      * 段落配置
      */
-    static list: any[] = [
+    static options: any[] = [
         {
             title: '标题1',
             role: 'h1'
@@ -57,7 +57,7 @@ export default class Paragraph extends Widget {
     /**
      * @inheritdoc
      */
-    public statusReflect() {
+    public selectionChange() {
         const ret = this.isStyled();
 
         this.setState({
@@ -77,10 +77,10 @@ export default class Paragraph extends Widget {
             return ret;
         }
 
-        for(let i=0, len=Paragraph.list.length; i<len; i++) {
-            if(range.currentInNode(Paragraph.list[i].role)) {
+        for(let i=0, len=Paragraph.options.length; i<len; i++) {
+            if(range.currentInNode(Paragraph.options[i].role)) {
                 ret.styled = true;
-                ret.role = Paragraph.list[i].role;
+                ret.role = Paragraph.options[i].role;
                 break;
             }
         }
@@ -153,9 +153,12 @@ export default class Paragraph extends Widget {
     getList = () => {
         const ret = [];
 
-        for(let i=0; i<Paragraph.list.length; i++) {
-            let activeClass = this.state.nowParagraph === Paragraph.list[i].role ? 'active' : '';
-            ret.push(<div key={i} className={`dy-editor-paragraph-dialog-item ${activeClass}`} data-role={Paragraph.list[i].role}>{Paragraph.list[i].title}</div>)
+        for(let i=0; i<Paragraph.options.length; i++) {
+            let activeClass = this.state.nowParagraph === Paragraph.options[i].role ? 'active' : '';
+            ret.push(<div
+                key={i}
+                className={`dy-editor-paragraph-dialog-item ${activeClass}`}
+                data-role={Paragraph.options[i].role}>{Paragraph.options[i].title}</div>);
         }
 
         return ret;
@@ -166,9 +169,9 @@ export default class Paragraph extends Widget {
 
         return (
             <section className="dy-editor-paragraph-wrapper">
-                <div
+                <span
                     className={`dy-editor-icon dy-editor-icon-paragraph ${activeClass}`}
-                    onClick={this.toggleDialog}></div>
+                    onClick={this.toggleDialog}></span>
 
                 <div
                     onClick={this.setParagraph}

@@ -15,7 +15,7 @@ export default class Blockquote extends Widget {
     /**
      * @inheritdoc
      */
-    statusReflect() {
+    selectionChange() {
         const range = Editable.getCurrentRange();
 
         if(null === range) {
