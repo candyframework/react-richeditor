@@ -6,7 +6,10 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: __dirname + '/dist',
-    publicPath: '/'
+    publicPath: '/',
+
+    libraryTarget: 'umd',
+    library: 'ReactRichEditor'
   },
   module: {
     rules: [

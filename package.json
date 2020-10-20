@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/tsc && cp ./src/index.css ./src/index.d.ts ./dist",
-    "build:allinone": "./node_modules/.bin/webpack --config ./webpack.config.js",
-    "demo": "node server.js",
-    "demo:build": "./node_modules/.bin/webpack --config ./webpack.config.dev.js"
+    "build:umdallinone": "./node_modules/.bin/webpack --config ./webpack.config.js",
+
+    "demo": "node server.js"
   },
   "author": "",
   "license": "ISC",

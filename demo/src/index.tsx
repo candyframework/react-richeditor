@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { render } from 'react-dom';
 
-import Editor from '../../src/index';
-import Bold from '../../src/widgets/bold/Bold';
-import Italic from '../../src/widgets/italic/Italic';
-import Paragraph from '../../src/widgets/paragraph/Paragraph';
-import Blockquote from '../../src/widgets/blockquote/Blockquote';
-import Emotion from '../../src/widgets/emotion/Emotion';
-import '../../src/index.css';
+import Editor from '../../dist/index';
+import Bold from '../../dist/widgets/bold/Bold';
+import Italic from '../../dist/widgets/italic/Italic';
+import Paragraph from '../../dist/widgets/paragraph/Paragraph';
+import Blockquote from '../../dist/widgets/blockquote/Blockquote';
+import Emotion from '../../dist/widgets/emotion/Emotion';
+import '../../dist/index.css';
 
 // 自定义
 import ScrollFix from './MyPlugin.js';
@@ -76,7 +76,7 @@ export default class Index extends React.Component {
                 <Editor
                     ref={this.editorRef}
                     minHeight={200}
-                    widgets={[Italic, Bold, Paragraph, '-', Blockquote, Emotion]}
+                    widgets={[Emotion, '-', Italic, Bold, Paragraph, Blockquote]}
                     plugins={{
                         scroll: {
                             className: ScrollFix,
